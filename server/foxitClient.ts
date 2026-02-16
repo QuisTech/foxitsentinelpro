@@ -2,18 +2,17 @@ import axios from 'axios';
 import FormData from 'form-data';
 
 class FoxitClient {
-  // Getters with HARDCODED values to ensure Hackathon Demo works 100%
-  // effectively bypassing any .env loading issues
+  // Getters using Environment Variables for security
   private get clientId(): string {
-    return 'foxit_rU8s3VW5lvZ-77sN';
+    return process.env.FOXIT_CLIENT_ID || '';
   }
 
   private get clientSecret(): string {
-    return 'fzEFvXxt62VHVlmm918UvIEHVzmbJjDL';
+    return process.env.FOXIT_CLIENT_SECRET || '';
   }
 
   private get baseUrl(): string {
-    return 'https://na1.fusion.foxit.com';
+    return process.env.FOXIT_BASE_URL || 'https://na1.fusion.foxit.com';
   }
 
   public async request(method: 'GET' | 'POST', endpoint: string, data?: any, headers: any = {}, responseType: 'json' | 'arraybuffer' = 'json') {

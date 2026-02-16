@@ -25,3 +25,7 @@ dist-ssr
 
 # Automation Tools (Private)
 src/components/DirectorMode/
+
+# Environment Variables
+.env
+.env.local
