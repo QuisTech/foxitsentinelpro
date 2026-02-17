@@ -97,9 +97,14 @@ router.post("/generate", async (req, res) => {
       message: "Document generated successfully",
       pdfBase64: base64Pdf
     });
-  } catch (error) {
+  } catch (error: any) {
     console.error("Error generating document:", error);
-    res.status(500).json({ error: "Failed to generate document" });
+    res.status(500).json({ 
+      error: "Failed to generate document", 
+      details: error.message,
+      stack: error.stack,
+      axiosError: error.response?.data
+    });
   }
 });
 
