@@ -7,7 +7,9 @@ export const foxitService = {
   ): Promise<FoxitProject> {
     const traceId = crypto.randomUUID();
     const events: AuditEvent[] = [];
-    const BACKEND_URL = 'http://localhost:3001/api';
+    // Use relative path for production (Vercel), fallback to localhost for local dev if needed
+    // However, best practice in Vite proxy or Vercel rewrites is to just use '/api'
+    const BACKEND_URL = '/api';
 
     const addEvent = (step: string, action: string, status: 'success' | 'info' | 'error' = 'success', metadata?: any) => {
       const event: AuditEvent = {
