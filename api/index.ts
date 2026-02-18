@@ -4,8 +4,10 @@
 export default async function handler(req: any, res: any) {
   console.log(`[API] Incoming request: ${req.method} ${req.url}`);
   try {
-    const app = (await import("../server/app")).default;
-    return app(req, res);
+    // const app = (await import("../server/app")).default;
+    // return app(req, res);
+    res.statusCode = 200;
+    res.end("Safety Check OK");
   } catch (err: any) {
     console.error("[CRITICAL] Request handler crashed:", err);
     res.statusCode = 200; // Return 200 to see error in tool
