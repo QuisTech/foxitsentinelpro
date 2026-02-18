@@ -1,8 +1,10 @@
-import app from "../server/app";
+// Remove static import
+// import app from "../server/app";
 
-export default function handler(req: any, res: any) {
+export default async function handler(req: any, res: any) {
   console.log(`[API] Incoming request: ${req.method} ${req.url}`);
   try {
+    const app = (await import("../server/app")).default;
     return app(req, res);
   } catch (err: any) {
     console.error("[CRITICAL] Request handler crashed:", err);
