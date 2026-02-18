@@ -4,6 +4,8 @@
 
 **[🚀 Live Demo →](https://foxitsentinelpro.vercel.app)**
 
+![Foxit Sentinel Pro Demo](https://github.com/user-attachments/assets/64635cc2-7903-4463-ac91-3fd7150ad3b4)
+
 ---
 
 ## The Problem Nobody Talks About
