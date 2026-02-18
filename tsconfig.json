@@ -11,7 +11,7 @@
     ],
     "skipLibCheck": true,
 
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "isolatedModules": true,
     "moduleDetection": "force",
     "allowSyntheticDefaultImports": true,
@@ -26,5 +26,6 @@
     "allowImportingTsExtensions": true,
     "noEmit": true
   },
+  "include": ["src", "server", "api"],
   "exclude": ["node_modules", "vite.config.ts"]
 }

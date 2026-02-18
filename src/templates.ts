@@ -1,3 +1,6 @@
+import { webcrypto } from 'node:crypto';
+// Cross-env crypto support
+const crypto = globalThis.crypto || webcrypto;
 
 export const PDF_TEMPLATES = {
   'TPL-NDA-V2': (data: any) => `
