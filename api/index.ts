@@ -1,8 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { foxitClient } from "../server/foxitClient";
-import { PDF_TEMPLATES } from "../src/templates";
+import { foxitClient } from "./_lib/foxitClient";
+import { PDF_TEMPLATES } from "./_lib/templates";
 
 dotenv.config();
 
